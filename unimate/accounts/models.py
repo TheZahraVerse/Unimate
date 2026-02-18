@@ -5,6 +5,43 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from core.models import University  # Import the University model
 
+from django.contrib.auth.models import AbstractUser, BaseUserManager
+
+class CustomUserManager(BaseUserManager):
+    """
+    Custom manager for User model where email is the unique identifiers
+    for authentication instead of usernames.
+    """
+
+    def create_user(self, email, student_id, major, university, role, password=None, **extra_fields):
+        """
+        Create and save a regular User with the given email and password.
+        """
+        if not email:
+            raise ValueError("The Email must be set")
+        email = self.normalize_email(email)
+        user = self.model(
+            email=email,
+            student_id=student_id,
+            major=major,
+            university=university,
+            role=role,
+            **extra_fields
+        )
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, student_id, major, university, role="admin", password=None, **extra_fields):
+        """
+        Create and save a SuperUser with the given email and password.
+        """
+        extra_fields.setdefault("is_staff", True)
+        extra_fields.setdefault("is_superuser", True)
+        extra_fields.setdefault("is_active", True)
+
+        return self.create_user(email, student_id, major, university, role, password, **extra_fields)
+
 
 class User(AbstractUser):
     """
@@ -39,7 +76,7 @@ class User(AbstractUser):
         max_length=100,
         help_text="Student's major (e.g. Computer Engineering)"
     )
-    
+
     # Role of the user in the system
     ROLE_CHOICES = (
         ("student", "Student"),
@@ -56,8 +93,10 @@ class User(AbstractUser):
     USERNAME_FIELD = "email"
 
     # Fields required when creating a superuser
-    REQUIRED_FIELDS = ["student_id", "university", "role"]
+    REQUIRED_FIELDS = ["student_id", "major", "university", "role"]
 
+    objects = CustomUserManager()
+    
     def __str__(self):
         """
         String representation of the user.
