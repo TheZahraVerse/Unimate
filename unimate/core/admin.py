@@ -1,4 +1,7 @@
 from django.contrib import admin
+from django.utils import timezone
+from django import forms
+from django.forms.widgets import TimeInput
 
 from .models import (
     University,
@@ -40,10 +43,30 @@ class CourseOfferingAdmin(admin.ModelAdmin):
     search_fields = ("course__name", "professor__first_name", "professor__last_name")
 
 
+class ScheduleAdminForm(forms.ModelForm):
+    class Meta:
+        model = Schedule
+        fields = "__all__"
+
+        widgets = {
+            # Use HTML5 time picker
+            "start_time": TimeInput(attrs={"type": "time"}),
+            "end_time": TimeInput(attrs={"type": "time"}),
+        }
+
+
+# Admin configuration
 @admin.register(Schedule)
 class ScheduleAdmin(admin.ModelAdmin):
-    list_display = ("id", "course_offering", "weekday", "start_time", "end_time", "week_type")
-    list_filter = ("weekday", "week_type")
+    form = ScheduleAdminForm
+
+    list_display = (
+        "course_offering",
+        "weekday",
+        "start_time",
+        "end_time",
+        "week_type",
+    )
 
 
 @admin.register(Enrollment)

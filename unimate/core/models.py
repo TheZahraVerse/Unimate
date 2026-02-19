@@ -180,6 +180,9 @@ class Schedule(models.Model):
         default="both"
     )
 
+    class Meta:
+        unique_together = ('course_offering', 'weekday', 'week_type', 'start_time','end_time', )
+
     def __str__(self):
         return f"{self.get_weekday_display()} ({self.start_time}-{self.end_time})"
 
