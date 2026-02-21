@@ -1,0 +1,13 @@
+# Python
+*.pyc
+__pycache__/
+db.sqlite3
+venv/
+.env
+
+# Node / React
+node_modules/
+dist/
+
+# IDE
+.idea/
