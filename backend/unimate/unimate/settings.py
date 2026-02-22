@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'courses',
     'core',
+    'inertia',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'inertia.middleware.InertiaMiddleware',
 ]
 
 ROOT_URLCONF = 'unimate.urls'
