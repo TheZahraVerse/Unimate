@@ -1,8 +1,8 @@
 /*
     Header:
-    a sticky horizontal tab bar 
-    including logo + site name(Logo Text), links(buttons), toggles 
-    Used for main layout only 
+    a sticky horizontal navigation bar 
+    including logo + site name(Logo Text), links(buttons), toggles  
+    specially designed for landing page
 */
 
 import React from 'react'
