@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from inertia import render
+from core.views import landing_test
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # test
+    path('test/', landing_test, name='landing_test'),
 ]
