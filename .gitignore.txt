@@ -1,0 +1,42 @@
+# Python / Django / Backend
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.pot
+**/migrations/__pycache__/
+db.sqlite3-journal
+media/
+staticfiles/
+.env
+.env.local
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+backend/.idea/
+
+# Node / Vite / React / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env
+frontend/.env.local
+frontend/.env.development*
+frontend/.env.production*
+
+# Editor / IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Misc
+*.bak
+*.tmp
+coverage/
+htmlcov/
