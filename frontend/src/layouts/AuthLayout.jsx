@@ -1,6 +1,5 @@
-/*
-    Auth Layout : 
-    Layout with fixed header and form for inputs
-    Used for login, signup, forget password and registration
-    Dark Mode ready
-*/
+/**
+ * Base layout for all authentication pages (login, register, forgot password, etc.)
+ * - Handles centered card layout, background, logo/site name, and responsive padding
+ * - Renders children 
+ */

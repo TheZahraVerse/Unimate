@@ -9,11 +9,10 @@
  */
 
    // TODO: add CTA section later
-import Hero from "./Hero";
-import Features from "./Features";
-import Header from "./Header";
-import Footer from "./Footer";
-import IconButton from "../../components/UI/IconButton";
+import Header from "./sections/Header"
+import Hero from "sections/Hero"
+import Features from "./sections/Features"
+import Footer from "./sections/Footer"
 
 export default function LandingPage({ message }) {
   return (
