@@ -4,9 +4,20 @@
 */
 
 import React from 'react'
+import logo from '../../assets/test_logo.png'
 
 export default function LogoImage() {
   return (
-    <div>LogoImage</div>
-  )
+    <div
+      className="h-12 w-12 rounded-full 
+      border border-black
+      overflow-hidden shrink-0"
+    >
+      <img
+        src={logo}
+        alt="logo"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  );
 }

@@ -11,7 +11,7 @@ export default function LinkButton({href, children, ...props}) {
   return (
     <Link href={href} {...props}>
         {/* {children} */}
-        Link Button
+        {props.text}
     </Link>
   )
 }
