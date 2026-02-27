@@ -10,3 +10,12 @@ def landing_test(request):
             'message': 'this message is from Django landing test view!'
         }
     )
+
+def login_test(request):
+    return render(
+        request,
+        'auth/AuthPage',
+        props={
+            'message': 'this message is from Django landing test view!'
+        }
+    )

@@ -29,9 +29,10 @@ export default function Header() {
             <IconButton alt="theme switch" />
             <IconButton alt="language switch" />
 
-            {/* CTA Button */}
+            {/* Login Button */}
             <LinkButton
               text="Login / Signup"
+              href={"/login"}
               className="px-5 py-2 text-sm font-medium
               bg-gray-600 hover:bg-gray-500
               text-white rounded-full transition"

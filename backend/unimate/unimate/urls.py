@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from inertia import render
 from core.views import landing_test
+from core.views import login_test
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     # test
-    path('test/', landing_test, name='landing_test'),
+    path('landing/', landing_test, name='landing_test'),
+    path('login/', login_test , name="login_test"),
     path('auth/', include('accounts.urls'))
 ]
