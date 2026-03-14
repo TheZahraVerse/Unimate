@@ -8,20 +8,35 @@
 import React from "react";
 import { useState } from "react";
 import BaseInput from "./BaseInput";
+import IconButton from "./IconButton";
 
-export default function PasswordInput({ placeholder = "Password" }) {
+export default function PasswordInput({ value , onChange , error }) {
   const [show, setShow] = useState(false);
 
   return (
-    <BaseInput
-      type={show ? "text" : "password"}
-      placeholder={placeholder}
-      icon="🔒"
-      rightIcon={
-        <span onClick={() => setShow(!show)}>
-          {show ? "🙈" : "👁"}
-        </span>
-      }
-    />
+    <div className="w-full">
+      <BaseInput
+        type={show ? "text" : "password"}
+        placeholder="Password"
+        iconName="lock"
+        value={value}
+        onChange={onChange}
+        rightIcon={
+          <IconButton 
+            iconName={show ? "eyeClosed" : "eyeOpen"} 
+            onClick={() => setShow(!show)}
+            className="p-0 hover:bg-transparent active:bg-transparent" 
+            iconClassName="w-5 h-5 text-gray-500 hover:text-gray-700"
+          />
+        }
+
+      />
+
+      {error && (
+        <p className="text-xs text-red-500 mt-1 px-2">
+          {error}
+        </p>
+      )}
+    </div>
   );
 }

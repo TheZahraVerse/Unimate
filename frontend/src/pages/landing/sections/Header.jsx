@@ -26,8 +26,8 @@ export default function Header() {
           <nav className="flex items-center gap-4">
 
             {/* optional icons */}
-            <IconButton alt="theme switch" />
-            <IconButton alt="language switch" />
+            <IconButton iconName="moon"/>
+            <IconButton iconName="globe"/>
 
             {/* Login Button */}
             <LinkButton

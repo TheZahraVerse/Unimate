@@ -14,6 +14,7 @@ export default function AuthPage({ message }) {
   return (
     <div>
         <h1>AuthPage</h1>
+        <p>TODO: set up layout and switching forms </p>
         <h2>{message}</h2>
         <EmailInput/>
         <PasswordInput/>

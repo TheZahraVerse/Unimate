@@ -8,7 +8,6 @@
    all texts are static from translation files
  */
 
-// TODO: add CTA section later
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import Features from "./sections/Features";
@@ -22,6 +21,11 @@ export default function LandingPage({ message }) {
 
       <main className="pt-20">
         <h2>{message}</h2>
+        <p>TODO: <br/>create Modal for pop-up messages /
+           choose switch animation for auth /
+           setup layout for student dashboard /
+           setup dark mode / translate static texts
+        </p>
 
         <Hero />
         <Features />

@@ -13,7 +13,7 @@ export default function EmailInput({ value, onChange, error }) {
       <BaseInput
         type="email"
         placeholder="Email address"
-        icon="✉"
+        iconName="email"
         value={value}
         onChange={onChange}
       />
