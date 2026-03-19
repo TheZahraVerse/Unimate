@@ -4,7 +4,7 @@
 */
 
 import React from 'react'
-import logo from '../../assets/test_logo.png'
+
 
 export default function LogoImage() {
   return (
@@ -14,7 +14,7 @@ export default function LogoImage() {
       overflow-hidden shrink-0"
     >
       <img
-        src={logo}
+        src='#'
         alt="logo"
         className="h-full w-full object-cover"
       />

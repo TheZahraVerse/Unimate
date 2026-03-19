@@ -5,19 +5,48 @@
  * - Uses Inertia's useForm for submission, errors, and processing state
  
  */
-import React from 'react'
-import EmailInput from '../../components/UI/EmailInput'
-import PasswordInput from '../../components/UI/PasswordInput'
-import BaseInput from '../../components/UI/BaseInput'
+import React , {useState} from "react";
+import AuthLayout from "../../layouts/AuthLayout";
+import IconButton from '../../components/UI/IconButton'
+import LoginForm from './forms/LoginForm'
+import RegisterForm from './forms/RegisterForm'
 
 export default function AuthPage({ message }) {
+  // use state for switching between login and signup
+  const [mode , setMode] = useState('login');
+
   return (
-    <div>
-        <h1>AuthPage</h1>
-        <p>TODO: set up layout and switching forms </p>
-        <h2>{message}</h2>
-        <EmailInput/>
-        <PasswordInput/>
-    </div>
-  )
+    <AuthLayout>
+      <div className="w-full">
+        {/* switch buttons */}
+        <div className="flex justify-center pt-1 gap-4 mb-6">
+          <IconButton 
+          iconName='login'
+          onClick={ () => setMode('login')}
+          />
+        
+          <IconButton 
+          iconName='signup'
+          onClick={ () => setMode('signup')}
+          />
+        </div>
+
+        {/* dynamic forms */}
+        <div className="w-full min-h-fit">
+          {/* login mode */}
+          {mode === 'login' && (
+            <LoginForm/>
+          )}
+
+          {/* signup mode */}
+          {mode === 'signup' && (
+            <RegisterForm/>
+          )}
+          
+        </div>
+      </div>
+
+      
+    </AuthLayout>
+  );
 }

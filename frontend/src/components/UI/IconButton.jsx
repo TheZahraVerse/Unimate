@@ -13,7 +13,8 @@ export default function IconButton({ iconName , onClick, className = "" , iconCl
       type="button"
       onClick={onClick}
       className={`h-10 w-10 flex items-center justify-center rounded-lg cursor-pointer
-         hover:bg-gray-800/50 active:bg-gray-700/70 transition-colors ${className}`}
+         hover:bg-gray-800/50 active:bg-gray-700/70 transition-colors 
+         border ${className}`}
     >
       {/* setup icon in the button  */}
       <Icon name={iconName} className={iconClassName}/>
