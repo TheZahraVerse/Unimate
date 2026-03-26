@@ -19,13 +19,8 @@ export default function LandingPage({ message }) {
     <>
       <Header />
 
-      <main className="pt-20">
+      <main className="group pt-20">
         <h2>{message}</h2>
-        <p>TODO: <br/>create Modal for pop-up messages /
-           choose switch animation for auth /
-           setup layout for student dashboard /
-           setup dark mode / translate static texts
-        </p>
 
         <Hero />
         <Features />

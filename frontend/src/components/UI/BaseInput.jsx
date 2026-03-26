@@ -28,7 +28,7 @@ export default function BaseInput({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="w-full bg-gray-200 text-sm px-10 py-2.5 rounded-full
+        className="w-full bg-gray-200 dark:bg-gray-600 text-sm px-10 py-2.5 rounded-full
         outline-none placeholder-gray-500
         focus:ring-2 focus:ring-white/60 transition"
       />

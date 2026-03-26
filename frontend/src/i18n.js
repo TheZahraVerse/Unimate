@@ -1,10 +1,8 @@
 /*
-    i18n Configuration File
-    initialing i18next and connecting 
-    translation resources to react.
-
+    i18n Configuration File 
+    Initializes i18next and connects translation resources (locales)
+    to the React application, enabling multi-language support.
 */
-
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
@@ -18,7 +16,7 @@ i18n.use(initReactI18next).init({
     },
     // default language
     lng:"en",
-    fallbacking:"en",
+    fallbackng:"en",
     interpolation:{escapeValue:false},
 });
 

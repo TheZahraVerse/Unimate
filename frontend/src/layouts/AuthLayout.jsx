@@ -10,10 +10,10 @@ import LogoText from '../components/shared/LogoText'
 export default function AuthLayout({ children }) {
   return (
     // background and position
-    <div className="min-h-screen bg-blue-500 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-blue-300 dark:bg-blue-950 flex items-center justify-center p-4">
       
       {/* card */}
-      <div className="w-full max-w-md bg-gray-500 rounded-2xl shadow-xl overflow-hidden">
+      <div className="w-full max-w-md bg-gray-500 dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden">
         
         {/* header (logo)*/}
         <div className="pt-4 pb-6 px-8 text-center border border-gray-300/50">

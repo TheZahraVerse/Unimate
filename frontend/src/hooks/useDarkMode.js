@@ -1,27 +1,38 @@
+/*
+    Custom Hook for Dark Mode Management
+    Manages the theme (light/dark) by interacting with localStorage
+    and applying a 'dark' class to the document element.
+    Provides the current theme state and a function to toggle it.
+*/
 import React from 'react'
 import { useEffect, useState } from "react";
-/*
-   useDarkMode
-   Manages a Dark/Light theme using a boolean state.
-   Automatically adds or removes the "dark" class to the document root.
- */
+
 export default function useDarkMode() {
-    // to keep the current mode
-  const [isDark, setIsDark] = useState(false);
+  // check the storage for default theme
+  const storedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  // set or remove dark from html class
-  useEffect(() =>{
-    if(isDark){
-        document.documentElement.classList.add("dark");
+  // use system theme if there is nothing in storage
+  const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
+
+  const [theme, setTheme] = useState(initialTheme);
+  
+  // Effect to apply the theme class to the document element
+  useEffect(() => {
+    const root = window.document.documentElement;
+
+    if (theme === "dark") {
+      root.classList.add("dark");
     } else {
-        document.documentElement.classList.remove("dark");
+      root.classList.remove("dark");
     }
-  }, [isDark]);
 
-  // make the function to toggle based on isDark
-  const toggleDark = () => {
-    setIsDark(!isDark);
-  }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
-  return [isDark, toggleDark];
+  // Function to toggle between 'light' and 'dark' themes
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+
+  return { theme, toggleTheme };
 }
+

@@ -1,0 +1,15 @@
+{
+  "public" : {
+    "name" : "Unimate",
+    "welcome" : "Wecome to Unimate",
+    "start" : "Start"
+  }
+  ,
+
+  "home" : {
+    "login" : "Login",
+    "signup" : "Signup",
+    "features" : "Features"
+  }
+}
+
