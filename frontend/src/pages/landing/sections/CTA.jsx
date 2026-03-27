@@ -1,28 +1,23 @@
 /**
  * CTA section :
- * Used in landing page to 
+ * Used in landing page
+ * Ensures clear user guidance and action prompt
  */
 
-import React from 'react'
+import React from "react";
+import LinkButton from "../../../components/UI/LinkButton";
 
 export default function CTA() {
   return (
-    <section className="bg-gray-400 dark:bg-gray-800 py-20">
-      <div className="max-w-4xl mx-auto px-6 text-center text-black dark:text-white">
-        <h2 className="text-4xl font-bold mb-6">
-         Start now !
-        </h2>
+    <section className="bg-(--secondary) border-t border-(--border-default) py-20">
+      <div className="max-w-4xl mx-auto px-6 text-center text-(--text-secondary)">
+        <h2 className="text-4xl font-bold mb-6">Start now !</h2>
 
         <p className="mb-8 text-lg opacity-90">
           Make your student life easier with us
         </p>
 
-        {/* TODO: add link button to login  */}
-        <button className="px-8 py-3 bg-white dark:bg-black text-black dark:text-white 
-        font-semibold rounded-full hover:bg-gray-200 transition">
-         Start with one click
-        </button>
-
+        <LinkButton text="Click Here!" href={"/login/"} className="text-3xl" />
       </div>
     </section>
   );

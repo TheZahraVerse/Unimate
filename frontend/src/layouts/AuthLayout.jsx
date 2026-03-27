@@ -6,22 +6,25 @@
 
 import React from "react";
 import LogoText from '../components/shared/LogoText'
+import PageSetting from '../components/shared/PageSetting'
 
 export default function AuthLayout({ children }) {
   return (
     // background and position
-    <div className="min-h-screen bg-blue-300 dark:bg-blue-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-(--primary) flex justify-center items-center p-4">
       
       {/* card */}
-      <div className="w-full max-w-md bg-gray-500 dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden">
+      <div className="w-full max-w-lg border border-(--border-default)
+       rounded-2xl bg-(--surface) shadow-xl p-8">
         
         {/* header (logo)*/}
-        <div className="pt-4 pb-6 px-8 text-center border border-gray-300/50">
+        <div className="flex justify-between items-center pb-4 mb-4 ">
           <LogoText/>
+          <PageSetting/>
         </div>
 
         {/* main content (forms and switch buttons)*/}
-        <div className="p-6 border border-gray-300/50 ">
+        <div className="p-6 border-t border-(--border-default) ">
           {children}
         </div>
 

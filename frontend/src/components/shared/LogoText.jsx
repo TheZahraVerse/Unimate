@@ -12,12 +12,12 @@ export default function LogoText() {
   const {t, i18n} = useTranslation();
 
   return (
-    <div className="flex items-center gap-2.5">
+    <div className="flex items-center gap-2.5 cursor-default">
       <LogoImage />
 
       <span
-        className="text-lg sm:text-xl font-semibold 
-        text-black dark:text-white tracking-tight"
+        className="text-lg sm:text-xl font-semibold tracking-tight
+        text-(--text-primary)"
       >
         {t("public.name")}
       </span>

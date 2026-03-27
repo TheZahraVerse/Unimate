@@ -10,14 +10,14 @@ import { useState } from "react";
 import BaseInput from "./BaseInput";
 import IconButton from "./IconButton";
 
-export default function PasswordInput({ value , onChange , error }) {
+export default function PasswordInput({ placeholder, value , onChange , error }) {
   const [show, setShow] = useState(false);
 
   return (
     <div className="w-full">
       <BaseInput
         type={show ? "text" : "password"}
-        placeholder="Password"
+        placeholder={placeholder}
         iconName="lock"
         value={value}
         onChange={onChange}

@@ -7,12 +7,13 @@
 import React from 'react'
 import BaseInput from './BaseInput';
 
-export default function EmailInput({ value, onChange, error }) {
+
+export default function EmailInput({ placeholder , value, onChange, error }) {
   return (
     <div className="w-full">
       <BaseInput
         type="email"
-        placeholder="Email address"
+        placeholder={placeholder}
         iconName="email"
         value={value}
         onChange={onChange}

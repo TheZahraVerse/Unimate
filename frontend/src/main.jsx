@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import i18n from './i18n'
 import { ThemeProvider } from './context/ThemeContext'
 import { LanguageProvider } from './context/LanguageContext'
-import './index.css'
+import './theme.css'
 
 createInertiaApp({
   title: (title) => `${title} Unimate`,

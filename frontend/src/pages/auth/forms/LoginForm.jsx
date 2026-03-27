@@ -9,15 +9,18 @@ import EmailInput from '../../../components/UI/EmailInput'
 import PasswordInput from '../../../components/UI/PasswordInput'
 import ActionButton from '../../../components/UI/ActionButton'
 import LinkButton from '../../../components/UI/LinkButton'
+import { useTranslation } from 'react-i18next'
 
 export default function LoginForm() {
+  const {t} = useTranslation();
+
   return (
-    <div className='border text-center border-gray-300/50'>
-        <h2>Login</h2>
-        <EmailInput/>
-        <PasswordInput/>
+    <div className='text-center'>
+        
+        <EmailInput placeholder={t("auth.email")}/>
+        <PasswordInput placeholder={t("auth.password")}/>
         {/* TODO: use link button or a specific type of button for pop-up */}
-        <a href='#' className='text-blue-700 hover:text-blue-600'>Forget password?</a>
+        <a href='#' className='text-(--link)'>{t("auth.dialog.forget-pass")}</a>
     </div>
   )
 }

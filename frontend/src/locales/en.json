@@ -1,15 +1,28 @@
 {
   "public" : {
     "name" : "Unimate",
-    "welcome" : "Wecome to Unimate",
+    "welcome" : "Welcome to Unimate",
     "start" : "Start"
   }
   ,
 
   "home" : {
+    "features" : "Features"
+  }
+  ,
+
+  "auth" : {
     "login" : "Login",
     "signup" : "Signup",
-    "features" : "Features"
+    "email" : "Email Address",
+    "password" : "Password",
+
+    "dialog" : {
+      "enter-email":"Enter Your Email Address",
+      "enter-pass" :"Enter Your Password",
+      "repeat-pass" : "Repeat Your Password",
+      "forget-pass" : "Forgot Password?"
+    }
   }
 }
 

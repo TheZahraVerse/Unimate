@@ -15,16 +15,15 @@ import PageSetting from "../../../components/shared/PageSetting";
 
 export default function Header() {
   // Initialize transtlators
-  const {t} = useTranslation();
-  const { toggleLanguage , lang } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
       <div className="mx-auto max-w-6xl px-6 pt-4">
         <div
           className="flex items-center justify-between h-16 px-6
-         bg-(--header-bg) dark:bg-(--header-bg) backdrop-blur-xl
-          border border-gray-700/50
+          bg-(--primary) backdrop-blur-xl
+          border border-border-default
           rounded-full shadow-lg shadow-black/20"
         >
           {/* Left: Logo */}
@@ -32,15 +31,12 @@ export default function Header() {
 
           {/* Right: Nav */}
           <nav className="flex items-center gap-4">
-            <PageSetting/>
+            <PageSetting />
 
             {/* Login Button */}
             <LinkButton
-              text={t("home.login")}
+              text={t("auth.login")}
               href={"/login"}
-              className="px-5 py-2 text-sm font-medium
-              bg-gray-700 dark:bg-gray-300 hover:bg-gray-500
-              text-white dark:text-black rounded-full transition"
             />
           </nav>
         </div>

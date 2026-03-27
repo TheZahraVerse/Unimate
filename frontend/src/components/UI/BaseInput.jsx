@@ -9,8 +9,7 @@ import React from "react";
 import Icon from "../shared/Icon";
 
 export default function BaseInput({ 
-  type = "text", placeholder, iconName, rightIcon , value ,
-  onChange
+  type , placeholder, iconName, rightIcon , value , onChange
 }) {
 
   return (
@@ -18,7 +17,7 @@ export default function BaseInput({
 
       {/* left icon  */}
       {iconName && (
-        <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">
+        <div className="absolute ps-3 top-1/2 -translate-y-1/2 pointer-events-none">
           <Icon name = {iconName}/>
         </div>
       )}
@@ -28,14 +27,14 @@ export default function BaseInput({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="w-full bg-gray-200 dark:bg-gray-600 text-sm px-10 py-2.5 rounded-full
-        outline-none placeholder-gray-500
-        focus:ring-2 focus:ring-white/60 transition"
+        className="w-full bg-(--primary)  ps-10 py-2.5 rounded-full
+        outline-none placeholder-(--text-secondary)
+        focus:ring-2 focus:ring-(--border-focus) transition"
       />
 
       {/* right icon */}
       {rightIcon && (
-        <div className="absolute cursor-pointer right-3 top-1/2 -translate-y-1/2">
+        <div className="absolute cursor-pointer inset-e-3 top-1/2 -translate-y-1/2">
           {rightIcon}
         </div>
       )}

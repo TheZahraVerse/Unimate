@@ -8,10 +8,11 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="text-center text-sm text-gray-500 border-t border-gray-700 pt-6">
+    <footer className='bg-(--primary) text-center text-(--text-on-primary)
+    border-t border-(--border-default)'>
+      <p className="pt-6">
           © 2026 Unimate. All rights reserved.
-        </div>
+      </p>
     </footer>
   )
 }

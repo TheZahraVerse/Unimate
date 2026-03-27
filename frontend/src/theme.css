@@ -1,0 +1,85 @@
+
+@import "tailwindcss";
+
+/*---------------------------- Light Theme (Default) */
+:root {
+  /* Backgrounds */
+  --primary: #ffffff;    /* Main background */
+  --secondary: #939393;  /* Subtle division */
+  --surface: #cecece;    /* Cards, modal, panel */
+  --hover: #f3f4f6;
+  --active: #9ca3af;
+  --disabled-bg: #e5e7eb; /* Disabled elements background */
+  --overlay: rgba(0, 0, 0, 0.5); /* Overlay for modals */
+
+  /* Texts */
+  --text-primary: #111827;    /* Primary text */
+  --text-secondary: #6b7280;  /* Secondary text, descriptions */
+  --text-tertiary: #9ca3af;   /* Tertiary text, subtle hints */
+  --text-on-primary: #000000; /* Text on primary backgrounds (e.g., buttons) */
+  --link: #2563eb;
+  --text-disabled: #9ca3af;  /* Text on disabled elements */
+
+  /* Borders */
+  --border-default: #e5e7eb;
+  --border-subtle: #f3f4f6;
+  --border-focus: #2563eb;
+  --border-error: #ef4444;
+
+  /* States */
+  --button-primary: #111c35;   /* Primary button */
+  --button-primary-text: #ffffff;  
+
+  --button-secondary: #e5e7eb;     /* Secondary button */
+  --button-secondary-text: #111827;
+
+  --button-danger: #ef4444;   /* Danger button  */
+  --button-danger-text: #ffffff;  
+
+  /* Alerts */
+  --alert-info: #dbeafe;
+  --alert-success: #d1fae5;
+  --alert-warning: #fef3c7;
+  --alert-error: #fee2e2;
+}
+
+/*---------------------------- Dark theme */
+.dark {
+  /* Backgrounds */
+  --primary: #0a0a0a;   /* Dark Main background */
+  --secondary: #1a1a1a; /* Dark Subtle division */
+  --surface: #5d5c5c;   /* Dark Cards, modal, panel */
+  --hover: #2a2a2a;
+  --active: #7a7a7a;
+  --disabled-bg: #3a3a3a;  /* Dark Disabled elements*/
+  --overlay: rgba(0, 0, 0, 0.7); /* Dark overlay */
+
+  /* Texts */
+  --text-primary: #f0f0f0;    /* Dark Primary text */
+  --text-secondary: #b0b0b0;  /* Dark Secondary text */
+  --text-tertiary: #7a7a7a;   /* Dark Tertiary text */
+  --text-on-primary: #ffffff; /* Text on primary backgrounds */
+  --link: #60a5fa;            /* Lighter link in dark mode */
+  --text-disabled: #7a7a7a;   /* Dark Text on disabled elements */
+  /* Borders */
+  --border-default: #3a3a3a; /* Dark Standard borders */
+  --border-subtle: #4a4a4a;  /* Dark Subtle borders */
+  --border-focus: #60a5fa;   /* Dark Border focus */
+  --border-error: #f87171;   /* Dark Error border */
+
+  /* States */
+  --button-primary: #3d7adc;     /* Dark Primary button  */
+  --button-primary-text: #ffffff;
+
+  --button-secondary: #3a3a3a;   /* Dark Secondary button  */
+  --button-secondary-text: #f0f0f0;
+
+  --button-danger: #f87171;      /* Dark Danger button  */
+  --button-danger-text:#ffffff; 
+
+  /* Alerts */
+  --alert-info: #2563eb;        
+  --alert-success: #10b981;      
+  --alert-warning: #f59e0b;      
+  --alert-error: #dc2626;        
+}

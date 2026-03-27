@@ -10,7 +10,7 @@ export default function LogoImage() {
   return (
     <div
       className="h-12 w-12 rounded-full 
-      border border-black
+      border border-(--border-default)
       overflow-hidden shrink-0"
     >
       <img
