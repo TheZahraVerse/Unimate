@@ -47,7 +47,7 @@
 .dark {
   /* Backgrounds */
   --primary: #0a0a0a;   /* Dark Main background */
-  --secondary: #1a1a1a; /* Dark Subtle division */
+  --secondary: #242424; /* Dark Subtle division */
   --surface: #5d5c5c;   /* Dark Cards, modal, panel */
   --hover: #2a2a2a;
   --active: #7a7a7a;
@@ -59,7 +59,7 @@
   --text-secondary: #b0b0b0;  /* Dark Secondary text */
   --text-tertiary: #7a7a7a;   /* Dark Tertiary text */
   --text-on-primary: #ffffff; /* Text on primary backgrounds */
-  --link: #60a5fa;            /* Lighter link in dark mode */
+  --link: #4307f9;            /* Lighter link in dark mode */
   --text-disabled: #7a7a7a;   /* Dark Text on disabled elements */
   /* Borders */
   --border-default: #3a3a3a; /* Dark Standard borders */

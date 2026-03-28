@@ -11,25 +11,16 @@ import LoginForm from "./forms/LoginForm";
 import RegisterForm from "./forms/RegisterForm";
 import ActionButton from "../../components/UI/ActionButton";
 import { useTranslation } from "react-i18next";
+import LinkButton from "../../components/UI/LinkButton";
 
 export default function AuthPage({ message }) {
   const { t } = useTranslation();
-  // use state for switching between login and signup
+  // TODO: Use url to set the mode from backend (mode as props)
   const [mode, setMode] = useState("login");
 
   return (
     <AuthLayout>
       <div className="w-full">
-        {/* switch buttons*/}
-        <div dir="ltr" className="flex justify-center pt-1 gap-4 mb-6">
-          <ActionButton variant="primary" onClick={() => setMode("login")}>
-            {t("auth.login")}
-          </ActionButton>
-
-          <ActionButton variant="primary" onClick={() => setMode("signup")}>
-            {t("auth.signup")}
-          </ActionButton>
-        </div>
 
         {/* dynamic forms */}
         <div className="w-full min-h-fit">
@@ -39,6 +30,29 @@ export default function AuthPage({ message }) {
           {/* signup mode */}
           {mode === "signup" && <RegisterForm />}
         </div>
+
+        
+        {/* switch buttons*/}
+        <div dir="ltr" className="flex justify-center pt-1 gap-4 mb-6">
+          {/* TODO: use link button to change url */}
+          {/* <LinkButton text={t("auth.login")} href={'/auth/login'}/>
+          <LinkButton text={t("auth.signup")} href={'/auth/signup'}/> */}
+
+          <ActionButton
+            variant={mode === "login" ? "primary" : "secondary"}
+            onClick={() => setMode("login")}
+          >
+            {t("auth.login")}
+          </ActionButton>
+
+          <ActionButton
+            variant={mode === "signup" ? "primary" : "secondary"}
+            onClick={() => setMode("signup")}
+          >
+            {t("auth.signup")}
+          </ActionButton>
+        </div>
+
       </div>
     </AuthLayout>
   );

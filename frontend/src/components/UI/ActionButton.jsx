@@ -10,7 +10,9 @@ import React from 'react'
 export default function ActionButton({children, variant, ...props}) {
   // set styles here(base style, variant style)
   const variants = {
-    primary : "bg-(--primary) text-(--text-on-primary) hover:bg-(--hover) active:bg-(--active)"
+    primary : "bg-(--primary) text-(--text-on-primary) hover:bg-(--hover) active:bg-(--active)",
+    secondary : "bg-(--secondary) text-(--text-secondary) hover:bg-(--hover) ",
+    submit : "bg-(--alert-success) text-(--text-on-primary) w-50"
   }
   return (
     <button className={`p-2 rounded cursor-pointer ${variants[variant]}`} {...props}>

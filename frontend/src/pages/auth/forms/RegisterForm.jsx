@@ -14,7 +14,6 @@ export default function RegisterForm() {
 
   return (
     <div className='text-center'>
-  
         <EmailInput placeholder={t("auth.dialog.enter-email")}/>
         <PasswordInput placeholder={t("auth.dialog.enter-pass")}/>
         <PasswordInput placeholder={t("auth.dialog.repeat-pass")}/>

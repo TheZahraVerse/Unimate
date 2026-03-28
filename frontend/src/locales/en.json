@@ -2,7 +2,8 @@
   "public" : {
     "name" : "Unimate",
     "welcome" : "Welcome to Unimate",
-    "start" : "Start"
+    "start" : "Start",
+    "submit" : "Submit"
   }
   ,
 
@@ -12,12 +13,19 @@
   ,
 
   "auth" : {
-    "login" : "Login",
-    "signup" : "Signup",
+    "login" : " Login ",
+    "signup" : " Signup ",
     "email" : "Email Address",
     "password" : "Password",
 
     "dialog" : {
+      "title-login":"Login to your account",
+      "intro-login":"Enter valid Email & Password",
+      "title-signup":"Create an account ",
+      "intro-signup":"Use proper information to signup",
+      "link-signup":"New here? ",
+      "link-login" : "Already have one? ",
+
       "enter-email":"Enter Your Email Address",
       "enter-pass" :"Enter Your Password",
       "repeat-pass" : "Repeat Your Password",

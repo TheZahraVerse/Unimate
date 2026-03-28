@@ -15,16 +15,16 @@ export default function AuthLayout({ children }) {
       
       {/* card */}
       <div className="w-full max-w-lg border border-(--border-default)
-       rounded-2xl bg-(--surface) shadow-xl p-8">
+       rounded-2xl bg-(--surface) shadow-xl pt-0 px-0 p-8">
         
-        {/* header (logo)*/}
-        <div className="flex justify-between items-center pb-4 mb-4 ">
+        {/* header (logo + settings)*/}
+        <div className="flex justify-between items-center rounded-t-2xl bg-(--secondary) p-2">
           <LogoText/>
           <PageSetting/>
         </div>
 
         {/* main content (forms and switch buttons)*/}
-        <div className="p-6 border-t border-(--border-default) ">
+        <div className="p-4 rounded-2xl">
           {children}
         </div>
 
