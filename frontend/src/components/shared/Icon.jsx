@@ -20,6 +20,7 @@ export default function Icon({ name , className= "w-5 h-5 text-gray-500"}) {
         login : <span className={className}>🗝️</span>,
         signup : <span className={className}>📝</span>,
         spinner : <span className={className}>🔃</span>,
+        google : <span className={className}>🌈</span>,
     }
   return icons[name] || null
 }

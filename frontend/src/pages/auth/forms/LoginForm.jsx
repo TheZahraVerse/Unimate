@@ -11,6 +11,7 @@ import ActionButton from "../../../components/UI/ActionButton";
 import LinkButton from "../../../components/UI/LinkButton";
 import { useTranslation } from "react-i18next";
 import { useForm } from "@inertiajs/react";
+import Icon from "../../../components/shared/Icon";
 
 export default function LoginForm() {
   const { t } = useTranslation();
@@ -38,15 +39,18 @@ export default function LoginForm() {
     });
   };
 
+  // function for login with Google
+  const handleGoogleLogin = () => {
+    // lead the user to url which handles Google in backend
+    window.location.href = "/accounts/google/login/";
+  };
+
   return (
     <div className="text-center text-(--text-on-primary)">
       {/* Intro dialogs  */}
-      <p className="py-6">
-        <h1 className="font-semibold text-4xl">
-          {t("auth.dialog.title-login")}
-        </h1>
-        <h2 className="pt-4">{t("auth.dialog.intro-login")}</h2>
-      </p>
+
+      <h1 className="font-semibold text-4xl">{t("auth.dialog.title-login")}</h1>
+      <h2 className="pt-4">{t("auth.dialog.intro-login")}</h2>
 
       {/* Login from  */}
       <form onSubmit={onSubmit} className="text-center px-6">
@@ -75,19 +79,34 @@ export default function LoginForm() {
 
         {/* TODO: remember me checkbox here */}
 
-        {/* Link to forget password page "/auth/forget-pass" */}
-        <div className="mb-6">
+        {/* Link to forget password page "/auth/forget-pass" 
+            +  Remember me checkbox (process in django)
+        */}
+        <div className="flex justify-between">
           {/* <LinkButton
         href={'auth/forget-pass'}
         text={t("auth.dialog.forget-pass")}
         /> */}
-          <a href="auth/forget-pass" className="text-(--link) ps-65">
+          <a href="auth/forget-pass" className="text-(--link)">
             {t("auth.dialog.forget-pass")}
           </a>
         </div>
 
-        {/* TODO: Submit button after fixing backend */}
-        <div className="mb-3 pt-3">
+        {/* TODO: django methods test*/}
+        {/* Submit + login with google buttons  */}
+        <div dir="ltr" className="flex justify-between mb-3 pt-3">
+          {/* Google  */}
+          <ActionButton
+            type="button"
+            variant="google"
+            onClick={handleGoogleLogin}
+            disabled={form.processing}
+          >
+            {t("auth.dialog.google-login")}
+            <Icon name="google" />
+          </ActionButton>
+
+          {/* Submit  */}
           <ActionButton
             type="submit"
             variant="submit"

@@ -25,11 +25,14 @@
       "intro-signup":"Use proper information to signup",
       "link-signup":"New here? ",
       "link-login" : "Already have one? ",
+      "google-login" : "Login with Google",
+      "google-signup" : "Signup with Google",
 
       "enter-email":"Enter Your Email Address",
       "enter-pass" :"Enter Your Password",
       "repeat-pass" : "Repeat Your Password",
-      "forget-pass" : "Forgot Password?"
+      "forget-pass" : "Forgot Password?",
+      "remember-me" : "Remember me "
     }
   }
 }
