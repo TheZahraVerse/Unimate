@@ -8,7 +8,7 @@
 import React from "react";
 import { useState } from "react";
 import BaseInput from "./BaseInput";
-import IconButton from "./IconButton";
+import IconButton from "../buttons/IconButton";
 
 export default function PasswordInput({ placeholder, value , onChange , error }) {
   const [show, setShow] = useState(false);

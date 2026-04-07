@@ -1,4 +1,5 @@
 /**
- * Dashboard menu item for student :
- * main content is today's schedule, todo list and simple calendar
+ * Dashboard page using the shared dashboard layout
+ * SidePanel shows the Todo List for quick task management
+ * MainContent includes reminders, timeline calendar, and profile completion status
  */

@@ -7,7 +7,7 @@ import React, {useState} from "react";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
-import IconButton from "../UI/IconButton";
+import IconButton from "../UI/buttons/IconButton";
 
 
 export default function PageSetting() {

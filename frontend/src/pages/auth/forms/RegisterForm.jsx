@@ -5,12 +5,12 @@
  * Used inside AuthPage when in register mode
  */
 import React, { useState } from "react";
-import EmailInput from "../../../components/UI/EmailInput";
-import PasswordInput from "../../../components/UI/PasswordInput";
+import EmailInput from "../../../components/UI/inputs/EmailInput";
+import PasswordInput from "../../../components/UI/inputs/PasswordInput";
 import { useTranslation } from "react-i18next";
 import { useForm } from "@inertiajs/react";
 import Icon from "../../../components/shared/Icon";
-import ActionButton from "../../../components/UI/ActionButton";
+import ActionButton from "../../../components/UI/buttons/ActionButton";
 
 export default function RegisterForm() {
   const { t } = useTranslation();

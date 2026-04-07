@@ -5,10 +5,10 @@
  * Show "Remember me" checkbox & Forgot password link
  */
 import React from "react";
-import EmailInput from "../../../components/UI/EmailInput";
-import PasswordInput from "../../../components/UI/PasswordInput";
-import ActionButton from "../../../components/UI/ActionButton";
-import LinkButton from "../../../components/UI/LinkButton";
+import EmailInput from "../../../components/UI/inputs/EmailInput";
+import PasswordInput from "../../../components/UI/inputs/PasswordInput";
+import ActionButton from "../../../components/UI/buttons/ActionButton";
+import LinkButton from "../../../components/UI/buttons/LinkButton";
 import { useTranslation } from "react-i18next";
 import { useForm } from "@inertiajs/react";
 import Icon from "../../../components/shared/Icon";

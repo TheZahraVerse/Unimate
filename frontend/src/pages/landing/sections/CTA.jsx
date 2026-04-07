@@ -5,7 +5,7 @@
  */
 
 import React from "react";
-import LinkButton from "../../../components/UI/LinkButton";
+import LinkButton from "../../../components/UI/buttons/LinkButton";
 
 export default function CTA() {
   return (

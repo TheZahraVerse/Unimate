@@ -5,7 +5,7 @@
 */
 
 import React from 'react'
-import Icon from '../shared/Icon'
+import Icon from '../../shared/Icon'
 
 export default function IconButton({ iconName , onClick, className = "" , iconClassName = "w-6 h-6"}) {
   return (

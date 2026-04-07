@@ -9,9 +9,9 @@ import React, { useState } from "react";
 import AuthLayout from "../../layouts/AuthLayout";
 import LoginForm from "./forms/LoginForm";
 import RegisterForm from "./forms/RegisterForm";
-import ActionButton from "../../components/UI/ActionButton";
+import ActionButton from "../../components/UI/buttons/ActionButton";
 import { useTranslation } from "react-i18next";
-import LinkButton from "../../components/UI/LinkButton";
+import LinkButton from "../../components/UI/buttons/LinkButton";
 
 export default function AuthPage({ message }) {
   const { t } = useTranslation();

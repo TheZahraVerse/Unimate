@@ -6,7 +6,7 @@
  * right icon might be an icon component or an icon button
  */
 import React from "react";
-import Icon from "../shared/Icon";
+import Icon from "../../shared/Icon";
 
 export default function BaseInput({ 
   type , placeholder, iconName, rightIcon , value , onChange

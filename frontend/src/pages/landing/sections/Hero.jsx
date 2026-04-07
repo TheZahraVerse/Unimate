@@ -6,8 +6,8 @@
  */
 
 import React from "react";
-import ActionButton from "../../../components/UI/ActionButton";
-import LinkButton from "../../../components/UI/LinkButton";
+import ActionButton from "../../../components/UI/buttons/ActionButton";
+import LinkButton from "../../../components/UI/buttons/LinkButton";
 import { useTranslation } from "react-i18next";
 
 export default function Hero() {

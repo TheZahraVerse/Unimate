@@ -8,8 +8,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import LogoText from "../../../components/shared/LogoText";
-import LinkButton from "../../../components/UI/LinkButton";
-import IconButton from "../../../components/UI/IconButton";
+import LinkButton from "../../../components/UI/buttons/LinkButton";
+import IconButton from "../../../components/UI/buttons/IconButton";
 import { useLanguage } from "../../../context/LanguageContext";
 import PageSetting from "../../../components/shared/PageSetting";
 
