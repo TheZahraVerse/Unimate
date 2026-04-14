@@ -19,6 +19,7 @@ from django.urls import path, include
 from inertia import render
 from core.views import landing_test
 from core.views import login_test
+from core.views import dashboard_test
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +27,6 @@ urlpatterns = [
     # test
     path('landing/', landing_test, name='landing_test'),
     path('login/', login_test , name="login_test"),
+    path('dashboard/', dashboard_test , name="dashboard_test"),
     path('auth/', include('accounts.urls'))
 ]

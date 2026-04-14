@@ -16,6 +16,15 @@ def login_test(request):
         request,
         'auth/AuthPage',
         props={
-            'message': 'this message is from Django landing test view!'
+            'message': 'this message is from Django login test view!'
+        }
+    )
+
+def dashboard_test(request):
+    return render(
+        request,
+        'student/Dashboard',
+        props={
+            'message': 'this message is from Django login test view!'
         }
     )

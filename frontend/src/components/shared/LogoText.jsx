@@ -12,7 +12,7 @@ export default function LogoText() {
   const {t, i18n} = useTranslation();
 
   return (
-    <div className="flex items-center gap-2.5 cursor-default">
+    <div className="flex items-center p-4 gap-2.5 cursor-default">
       <LogoImage />
 
       <span

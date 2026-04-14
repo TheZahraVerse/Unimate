@@ -37,7 +37,7 @@ export default function PageSetting() {
 
 
   return (
-    <div dir="ltr" className="flex items-center gap-4 border border-(--border-default) rounded-lg ">
+    <div dir="ltr" className="flex w-25 gap-5 border border-(--border-default) rounded-lg ">
         {/* language/dir toggle button  */}
         <IconButton
         type = "button"
@@ -54,3 +54,4 @@ export default function PageSetting() {
     </div>
   );
 }
+ 
