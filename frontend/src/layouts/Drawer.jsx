@@ -5,7 +5,7 @@
  */
 
 import React from "react";
-// TODO: INSTALL IT !! import clsx from "clsx";
+import clsx from "clsx";
 
 export default function Drawer({
   open,
