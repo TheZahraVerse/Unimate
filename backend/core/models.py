@@ -12,8 +12,39 @@ class University(models.Model):
 
     name = models.CharField(max_length=255, unique=True)
 
+    class Meta:
+        verbose_name_plural = 'universities'
+
+
     def __str__(self):
         return self.name
+
+
+# =====================================================
+# Major Model
+# =====================================================
+class Major(models.Model):
+    '''
+    This Model is pointing to Majors are available in the University
+    Each Major created is related to specific University
+    But more than one University have specific Major
+    '''
+
+    university = models.ForeignKey(
+        University,
+        on_delete=models.CASCADE,
+        related_name='majors',
+    )
+
+
+    name = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ['university']
+
+    def __str__(self):
+        return self.name
+
 
 
 # =====================================================
@@ -32,10 +63,19 @@ class Professor(models.Model):
         related_name="professors"
     )
 
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    major = models.ForeignKey(
+        Major,
+        on_delete=models.CASCADE,
+        related_name='professors',
+        null=True,
+        blank=True,
+    )
 
-    bio = models.TextField(blank=True, null=True)
+    first_name = models.CharField(max_length=150)
+
+    last_name = models.CharField(max_length=150)
+
+    bio = models.TextField(blank=True, null=True) 
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -62,6 +102,18 @@ class Course(models.Model):
         on_delete=models.CASCADE,
         related_name="courses"
     )
+
+    major = models.ForeignKey(
+        Major,
+        on_delete=models.PROTECT,
+        related_name='courses',
+        null=True,
+        blank=True
+    )
+
+    class Meta:
+        ordering = ['university', 'major']
+
 
     def __str__(self):
         return f"{self.name} ({self.code})"
@@ -108,7 +160,7 @@ class CourseOffering(models.Model):
 
     professor = models.ForeignKey(
         Professor,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         related_name="offerings"
     )
 
@@ -130,6 +182,7 @@ class CourseOffering(models.Model):
 
     class Meta:
         unique_together = ('course','professor','term','year','group_number')
+        ordering = ['university', 'course']
 
     def __str__(self):
         return f"{self.course.name} - {self.professor} - {self.term} {self.year}"
@@ -161,8 +214,10 @@ class Schedule(models.Model):
 
     course_offering = models.ForeignKey(
         CourseOffering,
-        on_delete=models.CASCADE,
-        related_name="schedules"
+        on_delete=models.SET_NULL,
+        related_name="schedules",
+        null=True,
+        
     )
 
     weekday = models.CharField(
@@ -199,7 +254,7 @@ class Enrollment(models.Model):
 
     student = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         related_name="enrollments"
     )
 
@@ -224,7 +279,6 @@ class Enrollment(models.Model):
 class Document(models.Model):
     """
     Represents shared documents.
-
     """
 
     title = models.CharField(max_length=255)
@@ -239,13 +293,16 @@ class Document(models.Model):
 
     professor = models.ForeignKey(
         Professor,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         related_name="documents"
     )
 
     author = models.CharField(max_length=255)
 
     uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-uploaded_at']
 
     def __str__(self):
         return self.title
@@ -264,13 +321,14 @@ class Rating(models.Model):
 
     student = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
+        on_delete=models.SET_DEFAULT,
+        default='DELETED USER',
         related_name="ratings"
     )
 
     professor = models.ForeignKey(
         Professor,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         related_name="ratings"
     )
 
@@ -288,6 +346,7 @@ class Rating(models.Model):
 
     class Meta:
         unique_together = ('student', 'course_offering')
+        ordering = ['-created_at']
 
     def __str__(self):
         return f"{self.student} rated {self.professor}: {self.score}"
@@ -314,6 +373,10 @@ class Notification(models.Model):
     is_read = models.BooleanField(default=False)
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+    class Meta:
+        ordering = ['is_read', '-created_at']
 
     def __str__(self):
         return f"Notification for {self.user}: {self.title}"

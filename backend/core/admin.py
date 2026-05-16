@@ -5,6 +5,7 @@ from django.forms.widgets import TimeInput
 
 from .models import (
     University,
+    Major,
     Professor,
     Course,
     CourseOffering,
@@ -20,6 +21,13 @@ from .models import (
 class UniversityAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
     search_fields = ("name",)
+
+
+@admin.register(Major)
+class MajorAdmin(admin.ModelAdmin):
+    list_display = ("id", "university", "name")
+    search_fields = ("university", "name")
+    
 
 
 @admin.register(Professor)

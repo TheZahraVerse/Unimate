@@ -1,10 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
-from django.contrib.auth.models import AbstractUser
-from django.db import models
-from core.models import University  # Import the University model
-
+from core.models import University, Major  # Import the University model
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 
 class CustomUserManager(BaseUserManager):
@@ -72,9 +68,12 @@ class User(AbstractUser):
         help_text="The university this user belongs to"
     )
 
-    major = models.CharField(
-        max_length=100,
-        help_text="Student's major (e.g. Computer Engineering)"
+    major = models.ForeignKey(
+        Major,
+        on_delete=models.CASCADE,
+        related_name='users',
+        help_text="Student's major (e.g. Computer Engineering)",
+        
     )
 
     # Role of the user in the system
@@ -86,7 +85,7 @@ class User(AbstractUser):
     role = models.CharField(
         max_length=10,
         choices=ROLE_CHOICES,
-        help_text="Role of the user in the platform"
+        help_text="The user Role in Platform"
     )
 
     # Define email as the USERNAME_FIELD for login
@@ -96,6 +95,15 @@ class User(AbstractUser):
     REQUIRED_FIELDS = ["student_id", "major", "university", "role"]
 
     objects = CustomUserManager()
+
+    registered_at = models.DateTimeField(auto_now_add=True)
+
+    last_login = models.DateTimeField(auto_now=True)
+
+
+    class Meta:
+        ordering = ['-registered_at']
+
     
     def __str__(self):
         """
